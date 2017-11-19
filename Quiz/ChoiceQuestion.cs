@@ -4,14 +4,14 @@ using System.Text;
 
 namespace Quiz
 {
-    class ChoiceQuestion :Question
+    public class ChoiceQuestion :Question
     {
-        public List<String> Antwoorden = new List<String>();
-
-        public int correctAntwoord { get; set; }
+        
+        
+        public String correctAntwoord { get; set; }
         
 
-
+      
 
         
     }
