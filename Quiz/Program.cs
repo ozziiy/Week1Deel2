@@ -8,7 +8,7 @@ namespace Quiz
     {
         static void Main(string[] args)
         {
-            
+            //sadf
             IList<Question> questions = new List<Question>() {
             new Question() {MoeilijkHeidsGraad = 2, Categorie = "Algemeen", Vraag = "Wie is die president van Rusland ?", Antwoord = "Putin"},
             new Question() {MoeilijkHeidsGraad = 3, Categorie = "Tech", Vraag = "Wat is de besturingsysteem van een HTC telefoon ?", Antwoord = "Android"},
