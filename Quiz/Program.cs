@@ -19,17 +19,18 @@ namespace Quiz
 
         };
 
-            Console.WriteLine("Orderen bij MoeilijkheidsGraad of Categorie ?");
+            Console.WriteLine("Orderen bij MoeilijkheidsGraad(1) of Categorie(2) ?");
             String Choice = Console.ReadLine();
             Program program = new Program();
 
-            if (Choice == "MoeilijkheidsGraad")
+            if (Choice == "1")
             {
                 var result = questions.OrderBy(d => d.MoeilijkHeidsGraad);
+                
 
                 program.Quiz(result);
             }
-            else if (Choice == "Categorie")
+            else if (Choice == "2")
             {
               
                 var result = questions.OrderBy(d => d.Categorie);
@@ -43,24 +44,26 @@ namespace Quiz
 
 
            
-
+            
             Console.WriteLine("##### Dit is een nieuwe quiz! #####");
-
-            Console.WriteLine("Selecteren bij moelijkheidsGraad of Categorie ?");
+            
+            Console.WriteLine("Selecteren bij moelijkheidsGraad(1) of Categorie(2) ?");
             String Choice2= Console.ReadLine();
             
 
-            if (Choice2 == "MoeilijkheidsGraad")
+            if (Choice2 == "1")
             {
-                Console.WriteLine("kies een Moeilijkheids categorie van 1 t/m 3");
-                int MoeilijkheidChoice = Console.Read();
+                Console.WriteLine("kies een MoeilijkheidsGraad categorie van 1 t/m 3");
+                String MoeilijkheidChoice = Console.ReadLine();
+                int MoeilijkheidChoiceInt = Int32.Parse(MoeilijkheidChoice);
 
-                IEnumerable<Question> result = questions.Where(d => d.MoeilijkHeidsGraad == MoeilijkheidChoice);
+                Console.WriteLine(MoeilijkheidChoice);
+                IEnumerable<Question> result = questions.Where(d => d.MoeilijkHeidsGraad == MoeilijkheidChoiceInt);
 
                 program.Quiz2(result);
             }
 
-            else if (Choice2 == "Categorie")
+            else if (Choice2 == "2")
             {
                 Console.WriteLine("Welke categorie wilt u (Algemeen, Tech, Sport, Entertainment)");
                 String CategorieChoice = Console.ReadLine();
@@ -85,6 +88,7 @@ namespace Quiz
 
             foreach (var a in result)
             {
+                
                 Console.WriteLine(a.Vraag);
                 String input = Console.ReadLine();
                 Console.WriteLine(a.checkAnswer(input));
@@ -120,6 +124,7 @@ namespace Quiz
             Console.WriteLine("Aantal vragen goed: " + VragenGoed + " Aantal vragen fout: " + vragenFout);
             Console.ReadKey();
         }
+        
 
 
     }

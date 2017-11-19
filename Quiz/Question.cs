@@ -10,8 +10,6 @@ namespace Quiz
         public String Categorie { get; set; }
         public String Vraag { get; set; }
         public String Antwoord { get; set; }
-        public int VragenGoed { get; set; }
-        public int VragenFout { get; set; }
 
         public Boolean checkAnswer(String input)
         {
@@ -19,14 +17,13 @@ namespace Quiz
 
             if (input == Antwoord)
             {
-                VragenGoed++;
 
                 return true;
             }
 
             
             else
-                VragenFout++;
+                
             return false;
         }
 
